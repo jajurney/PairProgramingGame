@@ -115,9 +115,11 @@ namespace PairProgramingGame
 
             if (score >= 10000)
             {
+                Console.Clear();
                 Console.WriteLine("Phew you killed all the monsters and have escaped the Haunted House.");
             }
             Console.WriteLine("Game Ended.");
+            Console.ReadLine();
 
         }
 
