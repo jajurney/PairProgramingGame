@@ -23,7 +23,7 @@ namespace PairProgramingGame.Enemies
                 
                 Health -= 100;
             }
-            else if (attack.Type == AttackType.Cross || attack.Type == AttackType.Trick || attack.Type == AttackType.knives)
+            else if (attack.Type == AttackType.Cross || attack.Type == AttackType.Trick)
             {
                 Console.WriteLine("Skeleton is invulnerable to the attack!");
                 Health -= 0;
