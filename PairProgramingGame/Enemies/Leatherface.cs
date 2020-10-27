@@ -18,12 +18,13 @@ namespace PairProgramingGame.Enemies
 
         public void Weakness(Attack attack)
         {
-            if (attack.Type == AttackType.Trick || attack.Type == AttackType.Sword)
+                if (attack.Type == AttackType.Trick || attack.Type == AttackType.Sword)
             {
                 Health -= 100;
             }
             else 
             {
+                Console.WriteLine("Leatherface is invulnerable to the Attack");
                 Health -= 0;
             }
 
