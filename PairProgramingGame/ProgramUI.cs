@@ -25,8 +25,8 @@ namespace PairProgramingGame
             Console.ReadKey();
             AddEnemiesToRoom();
 
-            //Console.WriteLine("Enter user name: ");
-            //user.Name = Console.ReadLine();
+            Console.WriteLine("Enter user name: ");
+            user.Name = Console.ReadLine();
 
             //While the user is alive
             while (alive && score < 10000)
@@ -61,7 +61,7 @@ namespace PairProgramingGame
                 while (enemy.Health > 0 && user.Health > 0)
                 {
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("Your total score is: " + score);
+                    Console.WriteLine(name + ", your total score is: " + score);
 
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("Your Health is: " + user.Health);
@@ -178,7 +178,7 @@ namespace PairProgramingGame
                 Console.WriteLine($"{option}\n");
             }
 
-            //Make sure the input is integer and between 1 to 7
+            //Make sure the input is integer and between 1 to 6
             do
             {
                 Console.WriteLine("Enter your attack option from the list: ");
