@@ -3,35 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace PairProgramingGame
 {
-   public class Attack
+    public class Attack
     {
-        public enum AttackType { Fire, Water, Trick, Cross, Sword }
-
+        public enum AttackType { Fire = 1, Water, Trick, Cross, Sword, Knives, Heal }
         public int Damage;
         public AttackType Type;
         public string Name { get; set; }
-
         //Attack the enemy
         public Attack(string type)
         {
             Type = GetTheAttackType(type);
         }
-        
+
         //Attack the user
         public Attack(int damage)
         {
             Damage = damage;
         }
 
-     
         private AttackType GetTheAttackType(string attackName)
         {
             AttackType attackType = AttackType.Water;
-
-            switch(attackName)
+            switch (attackName)
             {
                 case "Fire":
                     attackType = AttackType.Fire;
@@ -48,12 +43,13 @@ namespace PairProgramingGame
                 case "Sword":
                     attackType = AttackType.Sword;
                     break;
-               
-                default:
+                case "Knives":
+                    attackType = AttackType.Knives;
                     break;
-
+                default:
+                    attackType = AttackType.Heal;
+                    break;
             }
-
             return attackType;
         }
     }
