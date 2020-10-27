@@ -18,12 +18,14 @@ namespace PairProgramingGame.Enemies
 
         public void Weakness(Attack attack)
         {
-            if (attack.Type == AttackType.Fire || attack.Type == AttackType.Sword || attack.Type == AttackType.Water)
+           if (attack.Type == AttackType.Fire || attack.Type == AttackType.Sword || attack.Type == AttackType.Water)
             {
+                
                 Health -= 100;
             }
             else if (attack.Type == AttackType.Cross || attack.Type == AttackType.Trick || attack.Type == AttackType.knives)
             {
+                Console.WriteLine("Skeleton is invulnerable to the attack!");
                 Health -= 0;
             }
 
