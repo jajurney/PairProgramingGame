@@ -22,12 +22,12 @@ namespace PairProgramingGame.Enemies
             {
                 Health -= 100;
             }
-           else if (attack.Type == AttackType.Fire || attack.Type == AttackType.Cross || attack.Type == AttackType.Trick)
+          if (attack.Type == AttackType.Fire || attack.Type == AttackType.Cross || attack.Type == AttackType.Trick)
             {
                 Console.WriteLine("Jason is invulnerable to the attack!");
                 Health -= 0;
             }
-            else if (attack.Type == AttackType.Sword)
+             if (attack.Type == AttackType.Sword)
             {
                 Console.WriteLine("Sword attack did 50% damage to Jason.");
                 Health -= 50;
