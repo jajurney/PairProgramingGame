@@ -18,16 +18,18 @@ namespace PairProgramingGame.Enemies
 
         public void Weakness(Attack attack)
         {
-            if (attack.Type == AttackType.Cross)
+                    if (attack.Type == AttackType.Cross)
             {
                 Health -= 100;
             }
             else if (attack.Type == AttackType.Water || attack.Type == AttackType.Fire || attack.Type == AttackType.Trick)
             {
+                Console.WriteLine("The demon is invulnerable to the attack");
                 Health -= 0;
             }
             else if(attack.Type == AttackType.Sword)
             {
+                Console.WriteLine("Sword attack did 50% damage to the demon");
                 Health -= 50;
             }
         }
