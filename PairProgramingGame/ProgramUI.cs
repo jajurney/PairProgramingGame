@@ -26,34 +26,37 @@ namespace PairProgramingGame
             AddEnemiesToRoom();
 
             Console.WriteLine("Enter user name: ");
-            user.Name = Console.ReadLine();
+            string name= Console.ReadLine();
+
 
             //While the user is alive
             while (alive && score < 10000)
             {
                 Console.Clear();
 
-                if (user.Health == 0)
+                if (user.Health <= 0)
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     alive = false;
+
                     bool visible = true;
                     do
                     {
-                           //Press Ctrl + C to Quit
-                        Console.WriteLine(visible ? "\n\n\n\n              Alert!! Alert!! Alert!!" : "\n\n\n\n              Muah hahahahaha");
+                        //Press Ctrl + C to Quit
+                        Console.WriteLine(visible ? "\n\n\n\n                      " +
+                            "ALERT! ALERT!! ALERT!!!" : "\n\n\n\n                      MUAH HAHAHAHAHAHA");
                         Thread.Sleep(500);
                         visible = !visible;
                         Console.Clear();
-                        Console.WriteLine("\n\n\n\n\n\n\n\n          You died,\n" +               "now you'll be one of us forever!\n" +
-                            "Press Ctrl + C to end the game");
-
+                        Console.WriteLine(" \n\n\n\n\n\n\n\n\n\n                        " +
+                            "  You died!!!!!!\n" +
+                            "                 Now you'll be one of us forever!");
                         Thread.Sleep(500);
                         Console.Clear();
-                    } while (true);
 
-                 
-                }
+
+                    } while (true);
+                    }
 
                 enemy = GetRandomEnemy();
                                 
@@ -61,7 +64,7 @@ namespace PairProgramingGame
                 while (enemy.Health > 0 && user.Health > 0)
                 {
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine(name + ", your total score is: " + score);
+                    Console.WriteLine(name +", your total score is: " + score);
 
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("Your Health is: " + user.Health);
@@ -100,7 +103,7 @@ namespace PairProgramingGame
                             Console.WriteLine("You killed the monster");
 
                             score += enemy.PointValue;
-                            Console.WriteLine("Your total score is " + score);
+                            Console.WriteLine(name+ ", your total score is " + score);
                             Console.WriteLine("Press any key to continue through the house");
                             Console.ReadKey();
                             enemy.Health = 100;
@@ -119,10 +122,10 @@ namespace PairProgramingGame
             {
                 Console.Clear();
                 Console.WriteLine("Phew you killed all the monsters and have escaped the Haunted House.");
+                
             }
             Console.WriteLine("Game Ended.");
             Console.ReadLine();
-
         }
 
         //Display game rules and instructions
@@ -168,7 +171,7 @@ namespace PairProgramingGame
         //Display Attack options
         private string DisplayAttackOptions()
         {
-            string[] attackOptionsList = { "1. Fire", "2. Water", "3. Trick", "4. Cross", "5. Sword", "6. Attempt to Heal" };
+            string[] attackOptionsList = { "1. Fire", "2. Water", "3. Trick", "4. Cross", "5. Sword", "6. Knives", "7. Heal" };
             string attackType = "";
             int attackOption = 0;
 
@@ -178,12 +181,12 @@ namespace PairProgramingGame
                 Console.WriteLine($"{option}\n");
             }
 
-            //Make sure the input is integer and between 1 to 6
+            //Make sure the input is integer and between 1 to 7
             do
             {
                 Console.WriteLine("Enter your attack option from the list: ");
 
-            } while ((!int.TryParse(Console.ReadLine(), out attackOption)) || (attackOption < 1) || (attackOption > 6));
+            } while ((!int.TryParse(Console.ReadLine(), out attackOption)) || (attackOption < 1) || (attackOption > 7));
 
             switch (attackOption)
             {
@@ -203,8 +206,13 @@ namespace PairProgramingGame
                     attackType = "Sword";
                     break;
                 case 6:
+                    attackType = "Knife";
+                    break;
+                case 7:
                     attackType = "Heal";
                     break;
+                    
+    
                 default:
                     Console.WriteLine("Enter the correct attack type");
                     //Console.ForegroundColor = ConsoleColor.Red;
