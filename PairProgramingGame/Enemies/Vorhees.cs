@@ -18,16 +18,18 @@ namespace PairProgramingGame.Enemies
 
         public void Weakness(Attack attack)
         {
-            if (attack.Type == AttackType.Water)
+             if (attack.Type == AttackType.Water)
             {
                 Health -= 100;
             }
-            if (attack.Type == AttackType.Fire || attack.Type == AttackType.Cross || attack.Type == AttackType.Trick)
+           else if (attack.Type == AttackType.Fire || attack.Type == AttackType.Cross || attack.Type == AttackType.Trick)
             {
+                Console.WriteLine("Jason is invulnerable to the attack!");
                 Health -= 0;
             }
-            if (attack.Type == AttackType.Sword)
+            else if (attack.Type == AttackType.Sword)
             {
+                Console.WriteLine("Sword attack did 50% damage to Jason.");
                 Health -= 50;
             }
         }
