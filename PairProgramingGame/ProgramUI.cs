@@ -168,7 +168,7 @@ namespace PairProgramingGame
         //Display Attack options
         private string DisplayAttackOptions()
         {
-            string[] attackOptionsList = { "1. Fire", "2. Water", "3. Trick", "4. Cross", "5. Sword", "6. Knives", "7. Attempt to Heal" };
+            string[] attackOptionsList = { "1. Fire", "2. Water", "3. Trick", "4. Cross", "5. Sword", "6. Attempt to Heal" };
             string attackType = "";
             int attackOption = 0;
 
@@ -183,7 +183,7 @@ namespace PairProgramingGame
             {
                 Console.WriteLine("Enter your attack option from the list: ");
 
-            } while ((!int.TryParse(Console.ReadLine(), out attackOption)) || (attackOption < 1) || (attackOption > 7));
+            } while ((!int.TryParse(Console.ReadLine(), out attackOption)) || (attackOption < 1) || (attackOption > 6));
 
             switch (attackOption)
             {
@@ -203,9 +203,6 @@ namespace PairProgramingGame
                     attackType = "Sword";
                     break;
                 case 6:
-                    attackType = "Knives";
-                    break;
-                case 7:
                     attackType = "Heal";
                     break;
                 default:
