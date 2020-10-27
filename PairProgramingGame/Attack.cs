@@ -8,7 +8,7 @@ namespace PairProgramingGame
 {
    public class Attack
     {
-        public enum AttackType { Fire, Water, Trick, Cross, Sword, knives }
+        public enum AttackType { Fire, Water, Trick, Cross, Sword }
 
         public int Damage;
         public AttackType Type;
@@ -48,9 +48,7 @@ namespace PairProgramingGame
                 case "Sword":
                     attackType = AttackType.Sword;
                     break;
-                case "knives":
-                    attackType = AttackType.knives;
-                    break;
+               
                 default:
                     break;
 
