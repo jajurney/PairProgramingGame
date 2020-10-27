@@ -20,14 +20,17 @@ namespace PairProgramingGame.Enemies
         {
             if(attack.Type == AttackType.Fire)
             {
+                Console.WriteLine();
                 Health -= 100;
             }
             else if (attack.Type == AttackType.Water || attack.Type == AttackType.Cross || attack.Type == AttackType.Trick)
             {
+                Console.WriteLine("Freddy is invulnerable to the attack!");
                 Health -= 0;
             }
             else
             {
+                Console.WriteLine("Attack inflicted 50% damage to Freddy");
                 Health -= 50;
             }
         }
