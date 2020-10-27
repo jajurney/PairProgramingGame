@@ -40,14 +40,16 @@ namespace PairProgramingGame
                     bool visible = true;
                     do
                     {
-                        //Press Ctrl + C to Quit
-                        string alert = visible ? "ALERT! ALERT!! ALERT!!!" : "";
+                           //Press Ctrl + C to Quit
+                        Console.WriteLine(visible ? "\n\n\n\n              Alert!! Alert!! Alert!!" : "\n\n\n\n              Muah hahahahaha");
+                        Thread.Sleep(500);
                         visible = !visible;
                         Console.Clear();
-                        Console.WriteLine("You died, now you'll be one of us forever!\n" +
+                        Console.WriteLine("\n\n\n\n\n\n\n\n          You died,\n" +               "now you'll be one of us forever!\n" +
                             "Press Ctrl + C to end the game");
 
-                        Thread.Sleep(300);
+                        Thread.Sleep(500);
+                        Console.Clear();
                     } while (true);
 
                  
