@@ -4,31 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static PairProgramingGame.Attack;
-
 namespace PairProgramingGame.Enemies
 {
     public class Krueger : IEnemy
     {
         public string Name { get; } = "Freddy Kreuger";
-        
-        public int Health { get; set; } = 100;
 
+        public int Health { get; set; } = 100;
         public int PointValue { get; } = 2000;
 
-     
         public void Weakness(Attack attack)
         {
-            if(attack.Type == AttackType.Fire)
+            if (attack.Type == AttackType.Fire)
             {
-                Console.WriteLine();
                 Health -= 100;
             }
-            else if (attack.Type == AttackType.Water || attack.Type == AttackType.Cross || attack.Type == AttackType.Trick)
+            if (attack.Type == AttackType.Water || attack.Type == AttackType.Cross || attack.Type == AttackType.Trick)
             {
-                Console.WriteLine("Freddy is invulnerable to the attack!");
+                Console.WriteLine("Freddy is invulnerable to the attack");
                 Health -= 0;
             }
-            else
+            if (attack.Type == AttackType.Sword )
             {
                 Console.WriteLine("Attack inflicted 50% damage to Freddy");
                 Health -= 50;
@@ -39,7 +35,5 @@ namespace PairProgramingGame.Enemies
             Console.WriteLine("Freddy slashed you with his claws");
             return new Attack(20);
         }
-
-
     }
 }
